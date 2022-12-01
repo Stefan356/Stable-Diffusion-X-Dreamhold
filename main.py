@@ -108,13 +108,11 @@ def GenerateImage(prompt, title):
     load_r = json.loads(r['info'])
     meta = load_r["infotexts"][0]
 
-    filename = f"{title}.png"
-
     for i in r['images']:
         image = Image.open(io.BytesIO(base64.b64decode(i.split(",", 1)[0])))
         pnginfo = PngImagePlugin.PngInfo()
         pnginfo.add_text("parameters", meta)
-        image.save(filename, pnginfo=pnginfo)
+        image.save(f"./images/{title}.png", pnginfo=pnginfo)
 
     return image
 
@@ -163,7 +161,7 @@ while gameRunning:
                 img = GenerateImage(desc, name)
                 already_generated.append(name)
             else:
-                img = Image.open(f"{name}.png")
+                img = Image.open(f"./images/{name}.png")
 
             # swap image
             tkimg[0] = ImageTk.PhotoImage(img)
