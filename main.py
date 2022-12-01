@@ -76,15 +76,16 @@ while True:
 if numstyle == 1:
     stylePrompt = " medieval, hyper-realistic."
     negPrompt = "art, monochromatic, abstract, drawing, person"
-    print(f"Style-prompt is now: '{stylePrompt}'")
+
 if numstyle == 2:
     stylePrompt = " sci-fi, futuristic, hyper-realistic."
     negPrompt = "art, monochromatic, abstract, drawing, person"
-    print(f"Style-prompt is now: '{stylePrompt}'")
+
 if numstyle == 3:
     stylePrompt = " illustrated by Salvador Dali."
     negPrompt = "text, person, frame"
-    print(f"Style-prompt is now: '{stylePrompt}'")
+
+print(f"Style-prompt is now: '{stylePrompt}'")
 
 def GenerateImage(prompt, title):
     # run locally
