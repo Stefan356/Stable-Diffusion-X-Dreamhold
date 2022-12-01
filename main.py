@@ -18,7 +18,7 @@ import tkinter as tk
 
 from bs4 import BeautifulSoup
 
-from prompt_summary import nltk_summarize
+#from prompt_summary import nltk_summarize
 
 # Optionen die für den Web Treiber gesetzt werden können...
 options = webdriver.ChromeOptions()
