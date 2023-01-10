@@ -57,8 +57,9 @@ tkimg = [None]
 already_generated = []
 
 # style prompt variables
+prePrompt = "create an image from the perspective of the viewer where "
 stylePrompt = " medieval, hyper-realistic."
-negPrompt = "art, monochromatic, abstract, drawing, person"
+negPrompt = "art, monochromatic, abstract, drawing, person, human, people"
 numstyle = 1
 
 # startup prompt / style select
@@ -74,8 +75,9 @@ while True:
         break
 
 if numstyle == 1:
-    stylePrompt = " medieval, hyper-realistic."
-    negPrompt = "art, monochromatic, abstract, drawing, person"
+    prePrompt = "create an image from the perspective of the viewer where "
+    stylePrompt = " medieval, by Adrian Smith."
+    negPrompt = "monochromatic, person, human, people"
 
 if numstyle == 2:
     stylePrompt = " sci-fi, futuristic, hyper-realistic."
@@ -95,7 +97,7 @@ def GenerateImage(prompt, title):
     #url = "http://10.21.3.217:7860"
 
     payload = {
-        "prompt": prompt + stylePrompt,
+        "prompt": prePrompt + prompt + stylePrompt,
         "steps": 20,
         "width": 768,
         "height": 768,
