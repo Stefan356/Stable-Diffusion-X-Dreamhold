@@ -63,7 +63,7 @@ negPrompt = "art, monochromatic, abstract, drawing, person, human, people"
 numstyle = 1
 
 # startup prompt / style select
-print("Select desired visual style:\n   1: medieval, realistic\n   2: futuristic, realistc\n   3: painted, Salvador Dali (experimental)\n")
+print("Select desired visual style:\n   1: medieval, realistic\n   2: futuristic, realistc\n   3: painted, Salvador Dali (experimental)\n   4: custom style (input)\n")
 
 while True:
     try:
@@ -85,6 +85,10 @@ if numstyle == 2:
 
 if numstyle == 3:
     stylePrompt = " illustrated by Salvador Dali."
+    negPrompt = "text, person, frame"
+
+if numstyle == 4:
+    stylePrompt = "In the style of " + input("Please enter the desired visual style: ")
     negPrompt = "text, person, frame"
 
 print(f"Style-prompt is now: '{stylePrompt}'")
