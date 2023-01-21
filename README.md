@@ -53,7 +53,7 @@ The image generation can be done locally by installing Stable Diffusion as well 
   ```
 - Run webui-user.bat in the Stable Diffusion WebUI directory and wait for the setup to finish. After everything is done and the model is loaded, it should show the local URL as seen in this image:
 
-![alt text](https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/cmd.PNG "cmd window")
+  ![alt text](https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/cmd.PNG "cmd window")
 
 - Adjust parameters in main.py of this repository to generate the images locally:
   ```python
@@ -72,12 +72,16 @@ Just remember to change the URL for image generation to:
 ## General Instructions
 
 When you run main.py, a browser window opens, showing you the text of Dreamhold as well as an input field for your commands. Before an image is being generated, you have to select a desired visual style in the Python console. Currently implemented are:
-1: medieval, realistic 
-2: futuristic, realistc
-3: painted, Salvador Dali (experimental)
-4: custom style (input)
+- medieval, realistic 
+- futuristic, realistc
+- painted, Salvador Dali (experimental)
+- custom style (input)
 
-After you enter a number and press enter, a GUI window appears next to the browser window, showing you the currently active game environment. It may take a few seconds of waiting before Stable Diffusion initially stars generating an image upon the first command. In addition to that, the process of generation can take a few seconds depending on your GPU, but should not be overtly long.
+After you enter a number and press enter, a GUI window appears next to the browser window, showing you the currently active game environment:
+
+  ![alt text](https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/game_screen.PNG "game screen")
+
+It may take a few seconds of waiting before Stable Diffusion initially stars generating an image upon the first command. In addition to that, the process of generation can take a few seconds depending on your GPU, but should not be overtly long.
 
 
 ## Troubleshooting
