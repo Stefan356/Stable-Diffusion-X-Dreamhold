@@ -1,6 +1,6 @@
 ![alt text](https://github.com/Stefan356/Dreamhold-X-Stable-Diffusion/blob/main/sxd_logo.png "Logo Title Text 1")
 
-# Dreamhold-X-Stable-Diffusion
+# Stable-Diffusion-X-Dreamhold
 MTD Pro5, AI based visualization of textadventure
 
 This project aims to use Stable Diffusion to visualize the text-adventure Dreamhold during live play.
