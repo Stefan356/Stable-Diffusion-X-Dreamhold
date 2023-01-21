@@ -6,7 +6,7 @@ This is a semesterproject of the course Mediatechnology and -Design from the Uni
 This project aims to use Stable Diffusion to visualize the interactive fiction game Dreamhold during live play.
 As soon as the player enters a new location, the respective description is modified and used as a prompt to create an image and visualize the game environments.
 
-An example of a game environment created by Stable-Diffusion through an edited prompt taken from Dreamhold:
+An example of a game environment created by Stable Diffusion through an edited prompt taken from Dreamhold:
 
 ![alt text](https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/vaulting_cavern.png "Image generated from Dreamhold prompt")
 *A high, arched space opens around you, deep within the earth. The floor is unevenly
