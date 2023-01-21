@@ -1,3 +1,8 @@
+![alt text][logo]
+[logo]: https://github.com/Stefan356/Dreamhold-X-Stable-Diffusion/blob/main/sxd_logo.png "Dreamhold-X-Stable-Diffusion Logo"
+
+
+
 # Dreamhold-X-Stable-Diffusion
 MTD Pro5, AI based visualization of textadventure
 
