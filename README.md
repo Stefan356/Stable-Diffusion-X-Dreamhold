@@ -26,7 +26,7 @@ The image generation can be done locally by installing Stable Diffusion as well 
 #### Install Stable Diffusion WebUI
 - Install python 3.10.9 (it should work with any python version between 3.6 and 3.10)
 - Install git 
-- Clone the Stable Diffusion webbui repo found here: https://github.com/AUTOMATIC1111/stable-diffusion-webui
+- Clone the Stable Diffusion WebUI repo found here: https://github.com/AUTOMATIC1111/stable-diffusion-webui
 - Download a model + model config (yaml) for Stable Diffusion; this was tested using Stable Diffusion 2.1, but it should work with later versions/model-checkpoints as well.
   The model can be downloaded here (5.21GB): https://huggingface.co/stabilityai/stable-diffusion-2/blob/main/768-v-ema.ckpt
   In addition to the model you need a yaml-file, which can be found here: https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-inference-v.yaml
