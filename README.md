@@ -6,7 +6,7 @@ This is a semesterproject of the course Mediatechnology and -Design from the Uni
 This project aims to use Stable Diffusion to visualize the interactive fiction game Dreamhold during live play.
 As soon as the player enters a new location, the respective description is modified and used as a prompt to create an image and visualize the game environments.
 
-An example of a game environment created by Stable-Diffusion through a prompt generated from Dreamhold:
+An example of a game environment created by Stable-Diffusion through an edited prompt taken from Dreamhold:
 
 ![alt text](https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/vaulting_cavern.png "Image generated from Dreamhold prompt")
 *A high, arched space opens around you, deep within the earth. The floor is unevenly
@@ -39,7 +39,6 @@ The image generation can be done locally by installing Stable Diffusion as well 
   (--xformers is optional, but should allow for a more efficient image generation)
   
   ![alt text](https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/webui-user.PNG "webui-user.bat")
-edit the file to include --api and --xformers parameters
 
 #### Install Stable Diffusion X Dreamhold
 - Clone the stable-diffusion-x-dreamhold repository
@@ -55,7 +54,6 @@ edit the file to include --api and --xformers parameters
 - Run webui-user.bat in the Stable Diffusion WebUI directory and wait for the setup to finish. After everything is done and the model is loaded, it should show the local URL as seen in this image:
 
 ![alt text](https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/cmd.PNG "cmd window")
-cmd window
 
 - Adjust parameters in main.py of this repository to generate the images locally:
   ```python
