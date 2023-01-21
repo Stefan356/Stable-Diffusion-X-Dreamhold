@@ -89,7 +89,7 @@ It may take a few seconds of waiting before Stable Diffusion initially stars gen
 - If you get errors about the program not being able to find the images folder on your harddrive, try replacing the relative path in the code with an absolute one. (e.g. "./images/{title}.png" to "D:/projects/Stable-Diffusion-X-Dreamhold/images/{title}.png" in line 121 and 170)
 - If you get errors about an out-of-date/incompatible chromium driver, downloading a new webdriver from https://chromedriver.chromium.org/downloads should solve the issue.
 - If you use any 768 model for Stable Diffusion, it is avised to generate 768x768 images. If you want to change the resolution, you should also consider downloading the respective model checkpoint.
-- to reduce the time for image generation, you can try reducing steps, 
+- To reduce the time for image generation, you can try reducing the steps parameter.
 
 ## Credits
 
