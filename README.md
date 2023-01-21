@@ -24,7 +24,7 @@ The image generation can be done locally by installing Stable Diffusion as well 
 ### Local Image Generation
 
 #### Install Stable Diffusion WebUI
-- Install python 3.10.9 (it should work with any python version between 3.6 and 3.10
+- Install python 3.10.9 (it should work with any python version between 3.6 and 3.10)
 - Install git 
 - Clone the Stable Diffusion webbui repo found here: https://github.com/AUTOMATIC1111/stable-diffusion-webui
 - Download a model + model config (yaml) for Stable Diffusion; this was tested using Stable Diffusion 2.1, but it should work with later versions/model-checkpoints as well.
