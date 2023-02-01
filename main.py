@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 import keyboard
 import codecs
 import time
+import random
 import json
 import requests
 import io
@@ -18,7 +19,25 @@ import tkinter as tk
 
 from bs4 import BeautifulSoup
 
+# only needed for low-level NLTK summarization
 #from prompt_summary import nltk_summarize
+
+# ---IMPORTANT PARAMETERS---
+# run via FHOOE-Vpn
+#sdURL = "http://10.21.3.217:7860"
+# run locally
+sdURL = "http://127.0.0.1:7860"
+imgHeight = 768
+imgWidth = 768
+cfg = 8
+samplingSteps = 20
+# alternative sampling methods include: "Euler", "Euler a", "DPM ++ SDE", ""DPM2 Karras"
+samlingMethod = "Euler"
+seed = random.randint(1, 1000000000)
+# ------
+
+# how many styles to choose from (needed for catching input errors)
+numStyles = 4
 
 # Optionen die für den Web Treiber gesetzt werden können...
 options = webdriver.ChromeOptions()
@@ -56,55 +75,51 @@ tkimg = [None]
 # list storing titles of already generated images
 already_generated = []
 
-# style prompt variables
-prePrompt = "create an image from the perspective of the viewer where "
-stylePrompt = " medieval, hyper-realistic."
-negPrompt = "art, monochromatic, abstract, drawing, person, human, people"
-numstyle = 1
-
 # startup prompt / style select
-print("Select desired visual style:\n   1: medieval, realistic\n   2: futuristic, realistc\n   3: painted, Salvador Dali (experimental)\n   4: custom style (input)\n")
+print("Select desired visual style:\n   1: medieval fantasy, illustrated\n   2: sci-fi, futuristic, realistc\n   3: painted, Salvador Dali (experimental)\n   4: custom style (input, experimental)\n")
 
 while True:
     try:
-        numstyle = int(input("Enter number (default = 1): "))
-    except ValueError:
-        print("Please enter a valid number.")
+        styleInt = int(input("Enter number: "))
+        assert numStyles >= styleInt > 0
+    except (ValueError, AssertionError):
+        print("Please enter a valid number between 1 and 4.")
         continue
-    else:
-        break
+    break
 
-if numstyle == 1:
+if styleInt == 1:
     prePrompt = "create an image from the perspective of the viewer where "
-    stylePrompt = " medieval, by Adrian Smith."
+    stylePrompt = " medieval fantasy, ((illustrated by Adrian Smith))."
     negPrompt = "monochromatic, person, human, people"
 
-if numstyle == 2:
-    stylePrompt = " sci-fi, futuristic, hyper-realistic."
-    negPrompt = "art, monochromatic, abstract, drawing, person"
+if styleInt == 2:
+    prePrompt = "create an image from the perspective of the viewer where "
+    stylePrompt = " ((sci-fi)), ((futuristic)), realistic."
+    negPrompt = "art, monochromatic, drawing, person, human, people"
 
-if numstyle == 3:
-    stylePrompt = " illustrated by Salvador Dali."
+if styleInt == 3:
+    prePrompt = "create an image from the perspective of the viewer where "
+    stylePrompt = " illustrated ((by Salvador Dali))."
     negPrompt = "text, person, frame"
 
-if numstyle == 4:
-    stylePrompt = "In the style of " + input("Please enter the desired visual style: ")
-    negPrompt = "text, person, frame"
+if styleInt == 4:
+    stylePrompt = "In the style of ((" + input("Please enter the desired visual style: ") + "))."
+    negPrompt = "text, person, frame, human, people"
 
 print(f"Style-prompt is now: '{stylePrompt}'")
+print(f"Your seed for this run is: ", seed)
 
 def GenerateImage(prompt, title):
-    # run locally
-    url = "http://127.0.0.1:7860"
-
-    # run via FHOOE-Vpn
-    #url = "http://10.21.3.217:7860"
+    url = sdURL
 
     payload = {
         "prompt": prePrompt + prompt + stylePrompt,
-        "steps": 20,
-        "width": 768,
-        "height": 768,
+        "steps": samplingSteps,
+        "width": imgWidth,
+        "height": imgHeight,
+        "cfg_scale": cfg,
+        "sampler_index": samlingMethod,
+        "seed": seed,
         "negative_prompt": negPrompt
     }
 
@@ -160,6 +175,15 @@ while gameRunning:
                       "w") as f:  # ("D:\\Daten\\FH dump\\Nextcloud Folder\\Pro5\\Pro5_test_project\\file.txt", "w")
                 f.write(desc)
             print(name)
+
+            # change wood to metal in most furniture for sci-fi prompt
+            if styleInt == 2:
+                desc = desc.replace("shelve", "((futuristic, metallic)) shelve")
+                desc = desc.replace("shelves", "((futuristic, metallic)) shelves")
+                desc = desc.replace("cupboard", "((futuristic metallic cupboard))")
+                desc = desc.replace("cupboard", "((futuristic, metallic cupboards))")
+                desc = desc.replace("wooden", "((futuristic, metallic))")
+
             print(desc)
 
             # generate and show image
