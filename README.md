@@ -93,7 +93,7 @@ It may take a few seconds of waiting before Stable Diffusion initially stars gen
 
 ## Credits
 
-This project uses the Stable Diffusion WebUI (https://github.com/AUTOMATIC1111/stable-diffusion-webui) as well as the online interpreter for interactive fiction games found at https://iplayif.com/. The game Dreamhold was created by Zarfhome (https://zarfhome.com/dreamhold/). 
+This project uses the Stable Diffusion WebUI (https://github.com/AUTOMATIC1111/stable-diffusion-webui) as well as the online interpreter for interactive fiction games found at https://iplayif.com/. The game Dreamhold was created by Andrew Plotkin (https://zarfhome.com/dreamhold/). 
 
 
 
