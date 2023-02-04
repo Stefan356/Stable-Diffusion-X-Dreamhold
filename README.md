@@ -6,6 +6,8 @@ This is a semesterproject of the course Mediatechnology and -Design from the Uni
 This project aims to use Stable Diffusion to visualize the interactive fiction game Dreamhold during live play.
 As soon as the player enters a new location, the respective description is modified and used as a prompt to create an image and visualize the game environments.
 
+A report with our summarized findings can be sound here: https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/Stable_Diffusion_X_Dreamhold_TermReport.pdf 
+
 An example of a game environment created by Stable Diffusion through an edited prompt taken from Dreamhold:
 
 ![alt text](https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/vaulting_cavern.png "Image generated from Dreamhold prompt")
@@ -42,7 +44,7 @@ The image generation can be done locally by installing Stable Diffusion as well 
 
 #### Install Stable Diffusion X Dreamhold
 - Clone the stable-diffusion-x-dreamhold repository
-- Install necessary python packages either locally or in a virtual environment. Needed are: PIL (pillow), Beautiful Soup, Requests, Keyboard and Selenium
+- Install necessary python packages either locally or in a virtual environment. Needed are: PIL (pillow), Beautiful Soup, Requests, Keyboard and Selenium. 
   You can use the following commands to install them via pip in Windows: 
   ```python
   pip install beautifulsoup4
