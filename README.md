@@ -74,7 +74,7 @@ Just remember to change the URL for image generation to:
 ## General Instructions
 
 When you run main.py, a browser window opens, showing you the text of Dreamhold as well as an input field for your commands. Before an image is being generated, you have to select a desired visual style in the Python console. Currently implemented are:
-- medieval, realistic 
+- medieval, illustrated 
 - futuristic, realistc
 - painted, Salvador Dali (experimental)
 - custom style (input)
