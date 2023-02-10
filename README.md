@@ -83,7 +83,7 @@ After you enter a number and press enter, a GUI window appears next to the brows
 
   ![alt text](https://github.com/Stefan356/Stable-Diffusion-X-Dreamhold/blob/main/game_screen.PNG "game screen")
 
-It may take a few seconds of waiting before Stable Diffusion initially stars generating an image upon the first command. In addition to that, the process of generation can take a few seconds depending on your GPU, but should not be overtly long.
+It may take a few seconds of waiting before Stable Diffusion initially starts generating an image upon the first command. In addition to that, the process of generation can take a few seconds depending on your GPU, but should not be overtly long.
 
 
 ## Troubleshooting
